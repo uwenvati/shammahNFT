@@ -1,22 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap'); 
 
-* {
-  padding: 0;
+ * {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
-}
+ }
 
 :root {
-  --Softblue: hsl(215, 51%, 70%);
-  --Cyan: hsl(178, 100%, 50%);
-  --mainBG: hsl(217, 54%, 11%);
-  --cardBG: hsl(216, 50%, 16%);
-  --line: hsl(215, 32%, 27%);
-  --White: hsl(0, 0%, 100%);
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(212, 45%, 89%);
+  --grayish-blue: hsl(220, 15%, 55%);
+  --dark-blue: hsl(218, 44%, 22%);
 }
-
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
 
 img {
   max-width: 100%;
@@ -24,8 +19,8 @@ img {
 
 body {
   font-family: "Outfit" , sans-serif;
-  font-size: 18px;
-  background-color: var(--mainBG);
+  font-size: 15px;
+  background-color: var(--light-gray);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,133 +30,33 @@ body {
 }
 
 .container {
-  background-color: var(--cardBG);
+  background-color: var(--white);
   padding: 1.25rem;
-  border-radius: 0.5rem;
-  box-shadow: 5px 5px 5px hsl(217, 54%, 11%);
+  border-radius: 0.625rem;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
   margin-bottom: 2rem;
-  text-decoration: none;
-  margin-top: 5rem;
 }
 
-.image-card {
-  width: 100%;
-  cursor: pointer;
-  position: relative;
-  height: 400px;
+.container img {
+  border-radius: 0.625rem;
+  margin-bottom: 1rem;
 }
 
-.image-overlay {
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     background-color: var(--Cyan);
-     border-radius: 10px;
-     opacity: 0;
-     transition: opacity 0.5s ease;
+.container h1 {
+  color: var(--dark-blue);
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
-.image-overlay img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.container p {
+  color: var(--grayish-blue);
+  text-align: center;
 }
-.image-card:hover .image-overlay {
-   opacity: 1;
-}
+.attribution { font-size: 14px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
 
-.image-card > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-h1 {
-  color: var(--White);
-  margin: .5em 0;
-}
-
-p {
-  color: var(--Softblue);
-  font-size: 18px;
-  margin-bottom: 1em;
-}
-
-.info {
-  display: flex;
-  justify-content:space-between;
-  align-items: center;
-  margin-top: 10spx;
-  margin-bottom: 40px;
-  width: 100%;
-}
-
-.price {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  color: var(--Cyan);
-  font-weight: 400;
-}
-
-.price p {
-  color: var(--Cyan);
-  margin-top: 1em;
-}
-
-.time {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  color: var(--Softblue);
-}
-
-.time p {
-  margin-top: 1em;
-}
-
-.eth-container, .clock-container {
-  display: flex;
-  justify-content: center;
-}
-
-hr {
-  color: var(--line);
-  margin-bottom: 2em;
-}
-
-.author {
-  margin-top: 15px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
-}
-
-.author .avatar-container {
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
-  padding: 1px;
-  border: 1px solid white;
-}
-
-.author .avatar-container img {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-  
-}
-
-.author p {
-  color: var(--Softblue);
-}
-
-.author .name:hover {
-  color: var(--Cyan);
+@media (min-width: 500px) {
+  .container {
+   width: 400px;
+  }
 }
